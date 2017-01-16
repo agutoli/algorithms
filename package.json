@@ -10,7 +10,7 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register lessons/**/*.js -w"
+    "test": "mocha --compilers js:babel-core/register lessons/**/*.spec.js -w"
   },
   "author": "",
   "license": "ISC"
