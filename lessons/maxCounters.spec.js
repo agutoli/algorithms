@@ -4,11 +4,11 @@ var assert = require('assert');
  * @see https://codility.com/programmers/lessons/1-iterations/binary_gap/
  */
 const solution = (N) => {
-  let rtrim = (x) => x.replace(/[0]+$/, '');
   let binary = N.toString('2');
-  return rtrim(binary)
+  return binary
+    .replace(/[0]+$/, '')// right trim zeros
     .split('1')
-    .reduce((gap, zero) => (zero.length > gap) ? gap = zero.length : gap, 0);
+    .reduce((gap, zero) => Math.max(zero.length, gap), 0);
 }
 
 describe('Iterations', function() {
