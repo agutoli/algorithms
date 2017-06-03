@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-import { FrogJmp, PermMissingElem } from './TimeComplexity';
+import { FrogJmp, PermMissingElem, TapeEquilibrium } from './TimeComplexity';
 
 describe('Time Complexity', () => {
   describe('FrogJmp', () => {
@@ -38,6 +38,32 @@ describe('Time Complexity', () => {
 
     it('only one item', () => {
       assert.equal(PermMissingElem([1]), 2);
+    });
+  });
+
+  describe('TapeEquilibrium', () => {
+    it('should return 5', () => {
+      assert.equal(TapeEquilibrium([5]), 5);
+    });
+
+    it('should return 7', () => {
+      assert.equal(TapeEquilibrium([1, 8]), 7);
+    });
+
+    it('should return 1', () => {
+      assert.equal(TapeEquilibrium([1, 8, 10]), 1);
+    });
+    //
+    // it('should return 2000', () => {
+    //   assert.equal(TapeEquilibrium([-1000, 1000]), 2000);
+    // });
+    //
+    // it('should return 1', () => {
+    //   assert.equal(TapeEquilibrium([3, 1, 2, 4, 3]), 1);
+    // });
+
+    it('should return 20', () => {
+      assert.equal(TapeEquilibrium([-10, -20, -30, -40, 100]), 20);
     });
   });
 });

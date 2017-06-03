@@ -17,3 +17,21 @@ export const PermMissingElem = (A) => {
   }
   return 1;
 }
+
+export const TapeEquilibrium = (A) => {
+    const N = A.length;
+
+    if (N === 1) return Math.abs(A[0]);
+    if (N === 2) return Math.abs(A[0] - A[1]);
+
+    let leftSum = A[0];
+    let rightSum = A.filter((a, index) => index >= 1).reduce((a, b) => a + b, 0);
+    let minDiff = Math.abs(leftSum - rightSum);
+
+    for (let P = 1; P < (N - 1); P++) {
+      leftSum += A[P];
+      rightSum -= A[P];
+      minDiff = Math.min(minDiff, Math.abs(leftSum - rightSum));
+    }
+    return minDiff;
+}
