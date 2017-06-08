@@ -53,14 +53,14 @@ describe('Time Complexity', () => {
     it('should return 1', () => {
       assert.equal(TapeEquilibrium([1, 8, 10]), 1);
     });
-    //
-    // it('should return 2000', () => {
-    //   assert.equal(TapeEquilibrium([-1000, 1000]), 2000);
-    // });
-    //
-    // it('should return 1', () => {
-    //   assert.equal(TapeEquilibrium([3, 1, 2, 4, 3]), 1);
-    // });
+    
+    it('should return 2000', () => {
+      assert.equal(TapeEquilibrium([-1000, 1000]), 2000);
+    });
+
+    it('should return 1', () => {
+      assert.equal(TapeEquilibrium([3, 1, 2, 4, 3]), 1);
+    });
 
     it('should return 20', () => {
       assert.equal(TapeEquilibrium([-10, -20, -30, -40, 100]), 20);
